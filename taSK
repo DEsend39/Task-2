@@ -1,0 +1,248 @@
+Задание 1:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int a, b, c;
+  cout << "Введите три числа: ";
+  cin >> a >> b >> c;
+
+  if (a + b > c &amp;&amp; a + c > b &amp;&amp; b + c > a) {
+    if (a == b &amp;&amp; b == c) {
+      cout << "Равносторонний треугольник" << endl;
+    } else if (a == b || b == c || c == a) {
+      cout << "Равнобедренный треугольник" << endl;
+    } else {
+      cout << "Разносторонний треугольник" << endl;
+    }
+  } else {
+    cout << "Треугольник не существует" << endl;
+  }
+
+  return 0;
+}
+
+
+Задание 2:
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+  int a, b, c;
+  cout << "Введите длины сторон треугольника: ";
+  cin >> a >> b >> c;
+
+  double p = (a + b + c) / 2;
+  double s = sqrt(p * (p - a) * (p - b) * (p - c));
+
+  double a2 = a * a;
+  double b2 = b * b;
+  double c2 = c * c;
+
+  if (a2 + b2 == c2 || b2 + c2 == a2 || c2 + a2 == b2) {
+    cout << "Прямоугольный треугольник" << endl;
+  } else if (a2 + b2 < c2 || b2 + c2 < a2 || c2 + a2 < b2) {
+    cout << "Тупоугольный треугольник" << endl;
+  } else {
+    cout << "Остроугольный треугольник" << endl;
+  }
+
+  return 0;
+}
+
+
+Задание 3:
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+  int xa, ya, xb, yb, xc, yc;
+  cout << "Введите координаты вершин треугольника: ";
+  cin >> xa >> ya >> xb >> yb >> xc >> yc;
+
+  double a2 = (xa - xb) * (xa - xb) + (ya - yb) * (ya - yb);
+  double b2 = (xb - xc) * (xb - xc) + (yb - yc) * (yb - yc);
+  double c2 = (xc - xa) * (xc - xa) + (yc - ya) * (yc - ya);
+
+  if (a2 + b2 == c2 || b2 + c2 == a2 || c2 + a2 == b2) {
+    cout << "Прямоугольный треугольник" << endl;
+  } else if (a2 + b2 < c2 || b2 + c2 < a2 || c2 + a2 < b2) {
+    cout << "Тупоугольный треугольник" << endl;
+  } else {
+    cout << "Остроугольный треугольник" << endl;
+  }
+
+  return 0;
+}
+
+
+Задание 4:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int a, b, c;
+  cout << "Введите три числа: ";
+  cin >> a >> b >> c;
+
+  if (a + b > c &amp;&amp; a + c > b &amp;&amp; b + c > a) {
+    cout << "Да, числа могут быть сторонами треугольника" << endl;
+  } else {
+    cout << "Нет, числа не могут быть сторонами треугольника" << endl;
+  }
+
+  return 0;
+}
+
+
+Задание 5:
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+  int xa, ya, xb, yb, xc, yc, xd, yd;
+  cout << "Введите координаты вершин четырехугольника: ";
+  cin >> xa >> ya >> xb >> yb >> xc >> yc >> xd >> yd;
+
+  double ab = sqrt((xa - xb) * (xa - xb) + (ya - yb) * (ya - yb));
+  double bc = sqrt((xb - xc) * (xb - xc) + (yb - yc) * (yb - yc));
+  double cd = sqrt((xc - xd) * (xc - xd) + (yc - yd) * (yc - yd));
+  double da = sqrt((xd - xa) * (xd - xa) + (yd - ya) * (yd - ya));
+
+  double ac = sqrt((xa - xc) * (xa - xc) + (ya - yc) * (ya - yc));
+  double bd = sqrt((xb - xd) * (xb - xd) + (yb - yd) * (yb - yd));
+
+  if (abs(ab - cd) < 0.001 &amp;&amp; abs(bc - da) < 0.001) {
+    cout << "Прямоугольник" << endl;
+  } else if (abs(ab - cd) < 0.001 || abs(bc - da) < 0.001) {
+    cout << "Параллелограмм" << endl;
+  } else if (abs(ab - bc) < 0.001 || abs(bc - cd) < 0.001 || abs(cd - da) < 0.001 || abs(da - ab) < 0.001) {
+    cout << "Трапеция" << endl;
+  } else {
+    cout << "Произвольный четырехугольник" << endl;
+  }
+
+  return 0;
+}
+
+
+Задание 6:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int a, b, c, r, s;
+  cout << "Введите размеры кирпича: ";
+  cin >> a >> b >> c;
+  cout << "Введите размеры отверстия: ";
+  cin >> r >> s;
+
+  if (a <= r &amp;&amp; b <= s || a <= s &amp;&amp; b <= r) {
+    cout << "Кирпич пройдет через отверстие" << endl;
+  } else {
+    cout << "Кирпич не пройдет через отверстие" << endl;
+  }
+
+  return 0;
+}
+
+
+Задание 7:
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+  int r, p, q;
+  cout << "Введите радиус шара: ";
+  cin >> r;
+  cout << "Введите диагонали ромбовидного отверстия: ";
+  cin >> p >> q;
+
+  if (r * sqrt(2) <= sqrt(p * p + q * q)) {
+    cout << "Шар пройдет через отверстие" << endl;
+  } else {
+    cout << "Шар не пройдет через отверстие" << endl;
+  }
+
+  return 0;
+}
+
+
+Задание 8:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int A, B, C, R, S, T;
+  cout << "Введите размеры коробки: ";
+  cin >> A >> B >> C;
+  cout << "Введите размеры посылки: ";
+  cin >> R >> S >> T;
+
+  if (R <= A &amp;&amp; S <= B &amp;&amp; T <= C) {
+    cout << "Посылку можно упаковать в коробку" << endl;
+  } else {
+    cout << "Посылку нельзя упаковать в коробку" << endl;
+  }
+
+  return 0;
+}
+
+
+Задание 9:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int k, l, m;
+  cout << "Введите три числа: ";
+  cin >> k >> l >> m;
+
+  if (k % l == 0) {
+    cout << "k кратно l" << endl;
+  }
+  if (k % m == 0) {
+    cout << "k кратно m" << endl;
+  }
+  if (l % m == 0) {
+    cout << "l кратно m" << endl;
+  }
+
+  return 0;
+}
+
+
+Задание 10:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int n;
+  cout << "Введите трехзначное число: ";
+  cin >> n;
+
+  int a = n / 100</iostream>
